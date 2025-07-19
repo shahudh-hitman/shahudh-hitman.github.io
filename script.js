@@ -8,13 +8,40 @@ const YOUR_EMAIL = "shahudhmohamed5@gmail.com";
 let currentPhotoIndex = 0;
 let photoItems = [];
 
+// File Input Handler
+document.getElementById('photo-input').addEventListener('change', function(e) {
+    const files = e.target.files;
+    const fileCount = document.getElementById('file-count');
+    const statusEl = document.getElementById('upload-status');
+    
+    if (files && files.length > 0) {
+        if (files.length > 5) {
+            fileCount.textContent = "Max 5 photos!";
+            fileCount.style.color = "#e74c3c";
+            statusEl.textContent = "Please select 5 or fewer photos";
+            statusEl.style.color = "#e74c3c";
+            e.target.value = '';
+        } else {
+            fileCount.textContent = `${files.length} photo${files.length !== 1 ? 's' : ''} selected`;
+            fileCount.style.color = "#27ae60";
+            statusEl.textContent = "Ready to send!";
+            statusEl.style.color = "#27ae60";
+        }
+    } else {
+        fileCount.textContent = "No files selected";
+        fileCount.style.color = var(--secondary-color);
+        statusEl.textContent = "Max 5 photos per email";
+        statusEl.style.color = var(--secondary-color);
+    }
+});
+
 // Email Form Handler
 document.getElementById('email-upload-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const files = document.getElementById('photo-input').files;
     const statusEl = document.getElementById('upload-status');
     
-    if (files.length === 0) {
+    if (!files || files.length === 0) {
         statusEl.textContent = "Please select photos first!";
         statusEl.style.color = "#e74c3c";
         return;
@@ -27,12 +54,11 @@ document.getElementById('email-upload-form').addEventListener('submit', function
     }
 
     const subject = "Wedding Photo Submission";
-    const body = `Hello! Here are my ${files.length} photos from your wedding.`;
+    const body = `Here are ${files.length} photos from your wedding!`;
     window.location.href = `mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
-    statusEl.textContent = "Check your email client to attach and send!";
+    statusEl.textContent = "Opening email app...";
     statusEl.style.color = "#27ae60";
-    this.reset();
 });
 
 // Gallery Loader
