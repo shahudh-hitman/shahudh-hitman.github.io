@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Our Wedding Photos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="assets/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -32,9 +34,12 @@
 
         <section class="gallery-section">
             <h2>Wedding Gallery</h2>
-            <div class="photo-grid" id="github-gallery">
-                <div class="loading">Loading photos...</div>
+            <div class="gallery-container">
+                <div class="photo-grid" id="github-gallery"></div>
+                <button class="swipe-left" aria-label="Previous photo">❮</button>
+                <button class="swipe-right" aria-label="Next photo">❯</button>
             </div>
+            <button id="save-btn" class="btn save-btn">Save Photo</button>
         </section>
     </main>
 
@@ -42,6 +47,7 @@
         <p>Thank you for celebrating with us!</p>
     </footer>
 
+    <canvas id="canvas" style="display:none;"></canvas>
     <script src="script.js"></script>
 </body>
 </html>
