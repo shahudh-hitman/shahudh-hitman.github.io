@@ -93,18 +93,52 @@ main {
     font-size: clamp(1.1rem, 4vw, 1.3rem);
 }
 
-#email-upload-form {
+.file-input-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.file-label {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.file-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s ease;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-button:active {
+    transform: scale(0.98);
+}
+
+#file-count {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    color: var(--secondary-color);
 }
 
 #photo-input {
-    border: 1px dashed var(--secondary-color);
-    padding: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: clamp(0.8rem, 3vw, 1rem);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 .btn {
@@ -117,6 +151,7 @@ main {
     cursor: pointer;
     transition: all 0.2s ease;
     width: 100%;
+    min-height: 48px;
 }
 
 .btn:hover, .btn:focus {
@@ -133,6 +168,26 @@ main {
     font-size: clamp(0.8rem, 3vw, 0.9rem);
     color: var(--secondary-color);
     margin-top: 0.5rem;
+}
+
+.mobile-fallback {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+}
+
+.mobile-fallback p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.mobile-fallback ol {
+    padding-left: 1.5rem;
+}
+
+.mobile-fallback li {
+    margin-bottom: 0.3rem;
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
 }
 
 .gallery-section {
@@ -276,7 +331,7 @@ footer {
         padding: 1rem;
     }
 
-    .btn {
+    .btn, .file-button {
         padding: 0.7rem;
     }
 }
