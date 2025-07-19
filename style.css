@@ -21,7 +21,7 @@ body {
 
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                url('https://i.pinimg.com/736x/aa/b5/42/aab5426dc49311963d1b89b28581f52e--reception-ideas-fall-wedding.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -67,25 +67,56 @@ main {
     box-shadow: var(--shadow);
 }
 
-.upload-instructions {
+.upload-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
     max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 1rem;
+    margin: 1rem auto;
+    box-shadow: var(--shadow);
 }
 
-.upload-instructions h3 {
+.upload-box h3 {
     font-family: 'Playfair Display', serif;
     color: var(--secondary-color);
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-.upload-instructions ol {
-    padding-left: 1.5rem;
+#email-upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.upload-instructions li {
-    margin-bottom: 0.5rem;
+#photo-input {
+    border: 1px dashed var(--secondary-color);
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c19b2c;
+    transform: translateY(-2px);
+}
+
+#upload-status {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
 }
 
 .gallery-section {
@@ -146,40 +177,4 @@ footer {
     .upload-section {
         flex-direction: column;
     }
-}
-
-.upload-box {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    max-width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.upload-box h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-#email-upload-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#photo-input {
-    border: 1px dashed var(--secondary-color);
-    padding: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#upload-status {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    margin-top: 0.5rem;
 }
