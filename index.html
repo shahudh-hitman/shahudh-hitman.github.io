@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Photos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Lamya & Shahudh's Wedding</h1>
+        <p>Share your special moments with us</p>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <div class="qr-container">
+                <h2>Scan to Upload Photos</h2>
+                <img src="assets/qr-code.png" alt="QR Code" class="qr-code">
+                <p>or</p>
+                <button id="upload-btn" class="btn">Upload Photos</button>
+                <input type="file" id="file-input" accept="image/*" multiple style="display: none;">
+            </div>
+
+            <div class="instructions">
+                <h3>How to share your photos:</h3>
+                <ol>
+                    <li>Scan the QR code with your phone camera</li>
+                    <li>Select photos from your gallery or take new ones</li>
+                    <li>Upload and they'll appear in our shared gallery</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Wedding Gallery</h2>
+            <div class="photo-grid" id="photo-grid">
+                <!-- Photos will be loaded here -->
+                <div class="loading">Loading photos...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank you for celebrating with us!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

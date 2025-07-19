@@ -1,0 +1,170 @@
+:root {
+    --primary-color: #d4af37; /* Gold */
+    --secondary-color: #6b4d57; /* Mauve */
+    --light-color: #f8f4f0; /* Off-white */
+    --dark-color: #333;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.upload-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.qr-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 1rem 0;
+    border: 10px solid white;
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem 0;
+}
+
+.btn:hover {
+    background-color: #c19b2c;
+    transform: translateY(-2px);
+}
+
+.instructions {
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.instructions h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+}
+
+.instructions li {
+    margin-bottom: 0.5rem;
+}
+
+.gallery-section {
+    margin-bottom: 3rem;
+}
+
+.gallery-section h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    aspect-ratio: 1 / 1;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .upload-section {
+        flex-direction: column;
+    }
+    
+    .qr-container, .instructions {
+        width: 100%;
+        max-width: none;
+    }
+}
