@@ -19,12 +19,13 @@
                 <h2>Share Your Photos</h2>
                 <img src="assets/qr-code.png" alt="QR Code" class="qr-code">
                 <p>or</p>
-                <div class="upload-instructions">
-                    <h3>How to submit:</h3>
-                    <ol>
-                        <li>Email photos to: <strong>wedding@example.com</strong></li>
-                        <li>We'll add them within 24 hours</li>
-                    </ol>
+                <div class="upload-box">
+                    <h3>Email Us Your Photos</h3>
+                    <form id="email-upload-form">
+                        <input type="file" id="photo-input" accept="image/*" multiple>
+                        <button type="submit" class="btn">Send via Email</button>
+                    </form>
+                    <p id="upload-status">Max 5 photos per email</p>
                 </div>
             </div>
         </section>
@@ -32,7 +33,6 @@
         <section class="gallery-section">
             <h2>Wedding Gallery</h2>
             <div class="photo-grid" id="github-gallery">
-                <!-- Photos will load here automatically -->
                 <div class="loading">Loading photos...</div>
             </div>
         </section>
